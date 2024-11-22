@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Index - Gp Bootstrap Template</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Gp
+  * Template URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/
+  * Updated: Aug 15 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<style>
+  /* Contenedor del círculo */
+
+    .circle-left {
+      width: 250px; /* Tamaño del círculo */
+      height: 250px;
+      background-color: black; /* Fondo negro por defecto */
+      border: 10px solid #d4af37; /* Contorno amarillo neón */
+      border-radius: 50%; /* Hace el círculo redondo */
+      box-shadow: 0 0 30px #d4af37; /* Efecto neón */
+      flex-shrink: 0; /* Asegura que el círculo no se reduzca */
+      margin-right: 40px; /* Espacio entre el círculo y los textos */
+      margin-left: -50px; /* Mueve el círculo hacia la izquierda */
+      background-image: url('assets/img/111bf284-b096-40a5-a4e1-e854fc58afc9_1732155374660.png'); /* Imagen dentro del círculo */
+      background-size: cover; /* Ajusta la imagen para cubrir el círculo */
+      background-position: center; /* Centra la imagen en el círculo */
+      background-repeat: no-repeat; /* Evita repeticiones */
+    }
+
+
+    /* Textos al lado del círculo */
+    .hero-text {
+      text-align: left; /* Alinea los textos a la izquierda */
+    }
+
+    .hero-text h2 {
+      font-size: 3rem; /* Tamaño del título */
+      color: white;
+      margin: 0;
+    }
+
+    .hero-text p {
+      font-size: 1.5rem; /* Tamaño del texto */
+      color: white;
+      margin-top: 15px;
+    }
+
+
+
+  /*Botones social media*/
+  /* Ajuste de tamaño fijo para los botones */
+  .text {
+    display: flex;
+    align-items: center; /* Alinea texto y logo verticalmente */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    gap: 10px; /* Espacio entre el texto y el logo */
+  }
+
+  .btn-icon {
+    width: 20px; /* Tamaño fijo para el logo */
+    height: 20px; /* Mantén proporciones cuadradas */
+    object-fit: contain; /* Asegura que la imagen se ajuste correctamente */
+  }
+
+  .btn {
+    width: 200px; /* Asegúrate de que el botón tenga suficiente espacio */
+    height: 50px; /* Tamaño uniforme para todos los botones */
+    text-align: center;
+  }
+
+
+    .btn {
+      display: block;
+      padding: 1em 1em;
+      background: transparent;
+      outline: none;
+      border: 0;
+      color: #d4af37;
+      letter-spacing: 0.1em;
+      font-family: monospace;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1;
+      width: 150px; /* Ancho fijo */
+      height: 50px; /* Alto fijo */
+      text-align: center;
+    }
+
+    .cube {
+      position: relative;
+      transition: all 0.5s;
+    }
+
+    .cube .bg-top {
+      position: absolute;
+      height: 10px;
+      background: #d4af37;
+      bottom: 100%;
+      left: 5px;
+      right: -5px;
+      transform: skew(-45deg, 0);
+      margin: 0;
+      transition: all 0.4s;
+    }
+
+    .cube .bg {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      top: 0;
+      right: 0;
+      background: #d4af37;
+      transition: all 0.4s;
+    }
+
+    .cube .bg-right {
+      position: absolute;
+      background: #d4af37;
+      top: -5px;
+      z-index: 0;
+      bottom: 5px;
+      width: 10px;
+      left: 100%;
+      transform: skew(0, -45deg);
+      transition: all 0.4s;
+    }
+
+    .cube .bg-inner {
+      background: #28282d;
+      position: absolute;
+      left: 2px;
+      right: 2px;
+      top: 2px;
+      bottom: 2px;
+    }
+
+    .cube .text {
+      position: relative;
+      transition: all 0.4s;
+      line-height: 1.2em;
+    }
+
+    .cube:hover .bg-inner {
+      background: #d4af37;
+      transition: all 0.4s;
+    }
+
+    .cube:hover .text {
+      color: #28282d;
+      transition: all 0.4s;
+    }
+
+    .cube:hover .bg-right,
+    .cube:hover .bg,
+    .cube:hover .bg-top {
+      background: #28282d;
+    }
+
+    .cube:active {
+      z-index: 9999;
+      animation: bounce 0.1s linear;
+    }
+
+    @keyframes bounce {
+      50% {
+        transform: scale(0.9);
+      }
+    }
+
+    #call-to-action {
+      position: relative; /* Para controlar el stacking de los elementos */
+      overflow: hidden; /* Asegúrate de que la imagen no sobresalga */
+    }
+
+    #call-to-action img {
+      position: absolute; /* Coloca la imagen fuera del flujo */
+      top: 0;
+      left: 0;
+      width: 100%; /* Que ocupe todo el ancho */
+      height: 100%; /* Que ocupe todo el alto de la sección */
+      object-fit: cover; /* Escala la imagen correctamente */
+      z-index: -1; /* Colócala detrás del contenido */
+    }
+
+    /*lumber jack*/
+
+    .lumber-jack-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 0; /* Añadir un poco de espacio arriba y abajo */
+    }
+
+    /*Palanca de activasion*/
+    .toggle-container {
+      --knob-size: 1.75em;
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+
+    .toggle-input {
+      position: absolute;
+      z-index: 2;
+      bottom: 132.5%;
+      border-radius: 50%;
+      transform: rotate(-25deg);
+      transform-origin: 50% 4.75em;
+      width: var(--knob-size);
+      height: var(--knob-size);
+      opacity: 0;
+      /* fix em sizing */
+      font: inherit;
+      transition: transform .24s cubic-bezier(.65, 1.35, .5, 1);
+      cursor: pointer;
+    }
+
+    .toggle-input:checked {
+      transform: rotate(25deg);
+    }
+
+    .toggle-handle-wrapper {
+      position: absolute;
+      z-index: 1;
+      bottom: -135%;
+      -webkit-mask-image: linear-gradient(to bottom, #000 62.125%, transparent 50%);
+      mask-image: linear-gradient(to bottom, #000 62.125%, transparent 50%);
+      width: 200%;
+      overflow: hidden;
+    }
+
+    .toggle-handle {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transform: rotate(-25deg);
+      transform-origin: bottom center;
+      transition: transform .24s cubic-bezier(.65, 1.35, .5, 1);
+    }
+
+    .toggle-input:checked + .toggle-handle-wrapper > .toggle-handle {
+      transform: rotate(25deg);
+    }
+
+    .toggle-handle-knob {
+      position: relative;
+      z-index: 1;
+      border-radius: 50%;
+      width: var(--knob-size);
+      height: var(--knob-size);
+      background-image: radial-gradient(farthest-corner at 70% 30%, #fedee2 4%, #d63534 12% 24%, #a81a1a 50% 65%, #d63534 75%);
+      transition: transform .24s cubic-bezier(.65, 1.35, .5, 1);
+    }
+
+    .toggle-input:checked + .toggle-handle-wrapper .toggle-handle-knob {
+      transform: rotate(-90deg);
+    }
+
+    /* toggle handle knob hover inner shadow */
+    .toggle-handle-knob::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: inherit;
+      width: 100%;
+      height: 100%;
+      box-shadow: inset 0 0 8px 2px rgb(255 255 255 / .4);
+      opacity: 0;
+      transition: opacity .2s;
+    }
+
+    @media (hover: hover) {
+      .toggle-input:hover + .toggle-handle-wrapper .toggle-handle-knob::after,
+      .toggle-input:focus-visible + .toggle-handle-wrapper .toggle-handle-knob::after {
+        opacity: 1;
+      }
+    }
+
+    .toggle-handle-bar-wrapper {
+      position: relative;
+      width: .5em;
+      height: 3em;
+    }
+
+    .toggle-handle-bar {
+      position: absolute;
+      top: calc(var(--knob-size) / 2 * -1);
+      left: 0;
+      width: 100%;
+      height: calc(100% + var(--knob-size) / 2);
+      background-image: linear-gradient(to right, #777475, #a4a4a4, #fff 45% 55%, #a4a4a4, #777475);
+      background-position-x: .06125em;
+      transition: background-position-x .24s cubic-bezier(.65, 1.35, .5, 1);
+      box-shadow: inset 0 1em .25em rgb(0 0 0 / .4);
+    }
+
+    .toggle-input:checked + .toggle-handle-wrapper .toggle-handle-bar {
+      background-position-x: -.06125em;
+    }
+
+    .toggle-base {
+      position: relative;
+      border-radius: 3.125em;
+      padding: .25em;
+      width: 3.5em;
+      height: 1.125em;
+      background-color: #fff;
+      background-image: linear-gradient(to bottom, #fff, #d7d7d7);
+      box-shadow: 0 -.25em .5em #fff, 0 .25em .5em #d7d7d7;
+    }
+
+    .toggle-base-inside {
+      position: relative;
+      border-radius: inherit;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(to bottom, #a6a6a6, #7d7d7d);
+      box-shadow: inset 0 .0625em rgb(255 255 255 / .2), inset 0 -.03125em rgb(255 255 255 / 1), inset 0 -.0625em .25em rgb(0 0 0 / .1);
+    }
+
+    /* toggle base inside active */
+    .toggle-base-inside::after {
+      content: '';
+      position: absolute;
+      border-radius: inherit;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(to bottom, #5ab054, #438c3c);
+      box-shadow: inherit;
+      opacity: 0;
+      transition: opacity .24s cubic-bezier(.65, 1.35, .5, 1);
+    }
+
+    .toggle-input:checked ~ .toggle-base .toggle-base-inside::after {
+      opacity: 1;
+    }
+
+
+    /* From Uiverse.io by vinodjangid07 */ 
+    .Btn {
+      width: 140px;
+      height: 40px;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(to right,#77530a,#d4af37,#77530a,#77530a,#d4af37,#77530a);
+      background-size: 250%;
+      background-position: left;
+      color: #d4af37;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition-duration: 1s;
+      overflow: hidden;
+    }
+
+    .Btn::before {
+      position: absolute;
+      content: "ABOUT ME";
+      color: #d4af37;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 97%;
+      height: 90%;
+      border-radius: 8px;
+      transition-duration: 1s;
+      background-color: rgba(0, 0, 0, 0.842);
+      background-size: 200%;
+    }
+
+    .Btn:hover {
+      background-position: right;
+      transition-duration: 1s;
+    }
+
+    .Btn:hover::before {
+      background-position: right;
+      transition-duration: 1s;
+    }
+
+    .Btn:active {
+      transform: scale(0.95);
+    }
+
+</style>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">Dot Dager</h1>
+        <span>.</span>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home<br></a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Gallery</a></li>
+          <li><a href="#Social_Media">Social Media</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a href="index.html#Palanca">
+    
+        <button class="btn cube cube-hover">
+          <div class="bg-top">
+            <div class="bg-inner"></div>
+          </div>
+          <div class="bg-right">
+            <div class="bg-inner"></div>
+          </div>
+          <div class="bg">
+            <div class="bg-inner"></div>
+          </div>
+          <div class="text">Easter-Egg</div>
+        </button>
+      </a>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+      <img src="assets/img/vinland2.jpg" alt="" data-aos="fade-in">
+    
+      <div class="container">
+        <div class="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-xl-6 col-lg-8 d-flex align-items-center">
+            <!-- Círculo en el lado izquierdo -->
+            <div class="circle-left"></div>
+    
+            <!-- Textos en el lado derecho -->
+            <div class="hero-text ms-4">
+              <h2>Dot Dager<span>.</span></h2>
+              <p>A passionate content creator with a love for technology, philosophy, guitars, cats, and pickles!</p>
+              <p> </p>
+              <a href="index.html#about">
+              
+                <button class="Btn">
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Hero Section -->
+
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-lg-6 order-2 order-lg-1 content">
+            <h3>About Me</h3>
+            <p class="fst-italic">
+              I'm Dot Dager, a content creator who blends technology and creativity in unique ways. 
+              From building applications to strumming my guitar, I find inspiration in everyday life.
+              My love for philosophy keeps me curious, and my furry companions (cats!) bring endless joy.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+  <!-- Features Section -->
+  <section id="features" class="features section">
+
+    <div class="container"> 
+      <div class="row gy-4">
+        <div class="features-image col-lg-6" data-aos="fade-up" data-aos-delay="100"><img src="assets/img/pickle.webp" alt=""></div>
+        <div class="col-lg-6">
+
+          <div class="features-item d-flex ps-0 ps-lg-3 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="200">
+            <i class="bi bi-code-slash flex-shrink-0"></i>
+            <div>
+              <h4>Programming:</h4>
+              <p>Crafting innovative solutions and exploring new technologies is my passion. 
+                Coding allows me to bring ideas to life.</p>
+            </div>
+          </div><!-- End Features Item-->
+      
+          <div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="300">
+            <i class="bi bi-emoji-heart-eyes flex-shrink-0"></i>
+            <div>
+              <h4>Cats</h4>
+              <p>My furry companions brighten every day. Cats teach us patience, care, and playfulness.</p>
+            </div>
+          </div><!-- End Features Item-->
+      
+          <div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="400">
+            <i class="bi bi-music-note-beamed flex-shrink-0"></i>
+            <div>
+              <h4>Guitars</h4>
+              <p>Music fuels my creativity. Strumming a guitar is my way to relax and create melodies that resonate.</p>
+            </div>
+          </div><!-- End Features Item-->
+      
+          <div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="500">
+            <i class="bi bi-journal-bookmark-fill flex-shrink-0"></i>
+            <div>
+              <h4>Philosophy</h4>
+              <p>Exploring life's big questions keeps me grounded and curious. Philosophy inspires me to think deeply.</p>
+            </div>
+          </div><!-- End Features Item-->
+      
+          <div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="600">
+            <i class="bi bi-emoji-smile flex-shrink-0"></i>
+            <div>
+              <h4>Pickles</h4>
+              <p>A quirky snack that adds zest to life! Pickles are a reminder to enjoy the little things.</p>
+            </div>
+          </div><!-- End Features Item-->
+      
+        </div>
+      </div>
+
+    </div>
+
+  </section><!-- /Features Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Gallery</h2>
+        <p>Here’s a glimpse of the things that inspire me – from moments in life to creations and passions.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <!-- Item 1 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item position-relative" style="background: black; border: 2px solid #FFDD00; border-radius: 10px; padding: 10px; text-align: center;">
+              <img src="assets/img/Screenshot 2024-07-27 16-50-31_1732155520595.jpg" alt="Gallery Image 1" class="img-fluid" style="border-radius: 5px;">
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item position-relative" style="background: black; border: 2px solid #FFDD00; border-radius: 10px; padding: 10px; text-align: center;">
+              <img src="assets/img/DangharTemplate_1732155419682.jpg" alt="Gallery Image 2" class="img-fluid" style="border-radius: 5px;">
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item position-relative" style="background: black; border: 2px solid #FFDD00; border-radius: 10px; padding: 10px; text-align: center;">
+              <img src="assets/img/DangharTemplate_1732155469765.png" alt="Gallery Image 3" class="img-fluid" style="border-radius: 5px;">
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item position-relative" style="background: black; border: 2px solid #FFDD00; border-radius: 10px; padding: 10px; text-align: center;">
+              <img src="assets/img/DangharTemplate_1732155463223.jpg" alt="Gallery Image 4" class="img-fluid" style="border-radius: 5px;">
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item position-relative" style="background: black; border: 2px solid #FFDD00; border-radius: 10px; padding: 10px; text-align: center;">
+              <img src="assets/img/DangharTemplate_1732155483792.jpg" alt="Gallery Image 5" class="img-fluid" style="border-radius: 5px;">
+            </div>
+          </div>
+
+          <!-- Item 6 -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item position-relative" style="background: black; border: 2px solid #FFDD00; border-radius: 10px; padding: 10px; text-align: center;">
+              <img src="assets/img/Screenshot 2024-06-01 17-55-42_1732155487729.png" alt="Gallery Image 5" class="img-fluid" style="border-radius: 5px;">
+            </div>
+          </div>
+
+          
+        </div>
+        
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Social Media Section -->
+    <section id="Social_Media" class="call-to-action section dark-background">
+      <img src="assets/img/vinland2.jpg" alt="Social Media Background">
+      <div class="container">
+        <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-xl-10">
+            <div class="text-center">
+              <h3>Social Media</h3>              
+              <!-- Botones personalizados -->
+              <div class="row gy-4 mt-5 justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                <!-- Botón Instagram -->
+                <div class="col-xl-2 col-md-4">
+                  <a href="https://instagram.com/dager.32" target="_blank">
+                    <button class="btn cube cube-hover">
+                      <div class="bg-top">
+                        <div class="bg-inner"></div>
+                      </div>
+                      <div class="bg-right">
+                        <div class="bg-inner"></div>
+                      </div>
+                      <div class="bg">
+                        <div class="bg-inner"></div>
+                      </div>
+                      <div class="text">
+                        <i class="bi bi-instagram me-2"></i>Instagram
+                      </div>
+                    </button>
+                  </a>
+                </div>
+
+                <!-- Botón TikTok -->
+                <div class="col-xl-2 col-md-4">
+                  <a href="https://tiktok.com/@elantrodedager" target="_blank">
+                    <button class="btn cube cube-hover">
+                      <div class="bg-top">
+                        <div class="bg-inner"></div>
+                      </div>
+                      <div class="bg-right">
+                        <div class="bg-inner"></div>
+                      </div>
+                      <div class="bg">
+                        <div class="bg-inner"></div>
+                      </div>
+                      <div class="text">
+                        <i class="bi bi-tiktok me-2"></i>TikTok
+                      </div>
+                    </button>
+                  </a>
+                </div>
+
+                <!-- Botón YouTube Clips -->
+                <div class="col-xl-2 col-md-4">
+                  <a href="https://youtube.com/@DagerLive" target="_blank">
+                    <button class="btn cube cube-hover">
+                      <div class="bg-top">
+                        <div class="bg-inner"></div>
+                      </div>
+                      <div class="bg-right">
+                        <div class="bg-inner"></div>
+                      </div>
+                      <div class="bg">
+                        <div class="bg-inner"></div>
+                      </div>
+                      <div class="text">
+                        <i class="bi bi-youtube me-2"></i>Clips
+                      </div>
+                    </button>
+                  </a>
+                </div>
+
+                <!-- Botón Discord -->
+                <div class="col-xl-2 col-md-4">
+                  <a href="https://discord.gg/4NFk6TamAB" target="_blank">
+                    <button class="btn cube cube-hover">
+                      <div class="bg-top">
+                        <div class="bg-inner"></div>
+                      </div>
+                      <div class="bg-right">
+                        <div class="bg-inner"></div>
+                      </div>
+                      <div class="bg">
+                        <div class="bg-inner"></div>
+                      </div>
+                      <div class="text">
+                        <i class="bi bi-discord me-2"></i>Discord
+                      </div>
+                    </button>
+                  </a>
+                </div>
+
+                <!-- Botón GitHub -->
+                <div class="col-xl-2 col-md-4">
+                  <a href="https://github.com/MarianoVilla" target="_blank">
+                    <button class="btn cube cube-hover">
+                      <div class="bg-top">
+                        <div class="bg-inner"></div>
+                      </div>
+                      <div class="bg-right">
+                        <div class="bg-inner"></div>
+                      </div>
+                      <div class="bg">
+                        <div class="bg-inner"></div>
+                      </div>
+                      <div class="text">
+                        <i class="bi bi-github me-2"></i>GitHub
+                      </div>
+                    </button>
+                  </a>
+                </div>
+
+                <!-- Botón Spotify -->
+                <div class="col-xl-2 col-md-4">
+                  <a href="https://open.spotify.com/artist/6bkClBMJd4qKxJp0J5vHsz?si=mbfNHqvBT9SKSQ-ZNhXHJg&nd=1" target="_blank">
+                    <button class="btn cube cube-hover">
+                      <div class="bg-top">
+                        <div class="bg-inner"></div>
+                      </div>
+                      <div class="bg-right">
+                        <div class="bg-inner"></div>
+                      </div>
+                      <div class="bg">
+                        <div class="bg-inner"></div>
+                      </div>
+                      <div class="text">
+                        <i class="bi bi-spotify me-2"></i>Spotify
+                      </div>
+                    </button>
+                  </a>
+                </div>
+
+                <!-- Botón Twitch -->
+                <div class="col-xl-2 col-md-4">
+                  <a href="https://twitch.tv/dagerxiv" target="_blank">
+                    <button class="btn cube cube-hover">
+                      <div class="bg-top">
+                        <div class="bg-inner"></div>
+                      </div>
+                      <div class="bg-right">
+                        <div class="bg-inner"></div>
+                      </div>
+                      <div class="bg">
+                        <div class="bg-inner"></div>
+                      </div>
+                      <div class="text">
+                        <i class="bi bi-twitch me-2"></i>Twitch
+                      </div>
+                    </button>
+                  </a>
+                </div>
+
+                <!-- Botón Twitter -->
+                <div class="col-xl-2 col-md-4">
+                  <a href="https://twitter.com/Dager_32" target="_blank">
+                    <button class="btn cube cube-hover">
+                      <div class="bg-top">
+                        <div class="bg-inner"></div>
+                      </div>
+                      <div class="bg-right">
+                        <div class="bg-inner"></div>
+                      </div>
+                      <div class="bg">
+                        <div class="bg-inner"></div>
+                      </div>
+                      <div class="text">
+                        <i class="bi bi-twitter me-2"></i>Twitter
+                      </div>
+                    </button>
+                  </a>
+                </div>
+
+                <!-- Botón YouTube El Antro -->
+                <div class="col-xl-2 col-md-4">
+                  <a href="https://youtube.com/c/DagerXIV" target="_blank">
+                    <button class="btn cube cube-hover">
+                      <div class="bg-top">
+                        <div class="bg-inner"></div>
+                      </div>
+                      <div class="bg-right">
+                        <div class="bg-inner"></div>
+                      </div>
+                      <div class="bg">
+                        <div class="bg-inner"></div>
+                      </div>
+                      <div class="text">
+                        <i class="bi bi-youtube me-2"></i>Antro
+                      </div>
+                    </button>
+                  </a>
+                </div>
+
+                <!-- Botón LinkedIn -->
+                <div class="col-xl-2 col-md-4">
+                  <a href="https://www.linkedin.com/in/mariano-luis-villa/?locale=en_US" target="_blank">
+                    <button class="btn cube cube-hover">
+                      <div class="bg-top">
+                        <div class="bg-inner"></div>
+                      </div>
+                      <div class="bg-right">
+                        <div class="bg-inner"></div>
+                      </div>
+                      <div class="bg">
+                        <div class="bg-inner"></div>
+                      </div>
+                      <div class="text">
+                        <i class="bi bi-linkedin me-2"></i>LinkedIn
+                      </div>
+                    </button>
+                  </a>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- Social Media Section -->
+    
+  <section id="Palanca" class="contact section">
+    <!-- Botón Palanca -->
+    <div class="toggle-container">
+      <input id="toggle-game" class="toggle-input" type="checkbox" onclick="toggleLumberjack()">
+      <div class="toggle-handle-wrapper">
+        <div class="toggle-handle">
+          <div class="toggle-handle-knob"></div>
+          <div class="toggle-handle-bar-wrapper">
+            <div class="toggle-handle-bar"></div>
+          </div>
+        </div>
+      </div>
+      <div class="toggle-base">
+        <div class="toggle-base-inside"></div>
+      </div>
+    </div>
+  </section>
+    <!-- lumber Section -->
+    <section id="lumber" class="contact section" style="display: none;">
+      <div class="lumber-jack-container">
+        <iframe 
+          id="lumberjack-game"
+          title="Lumber Jack Game"
+          src="https://tbot.xyz/lumber/"
+          style="width: 100%; height: 600px; max-width: 800px; border: none; box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); border-radius: 10px;">
+        </iframe>
+      </div>
+    </section>
+
+    <script>
+      function toggleLumberjack() {
+        const lumberSection = document.getElementById('lumber');
+        const toggleInput = document.getElementById('toggle-game');
+    
+        // Mostrar u ocultar la sección del juego basado en el estado del checkbox
+        if (toggleInput.checked) {
+          lumberSection.style.display = 'block';
+        } else {
+          lumberSection.style.display = 'none';
+        }
+      }
+    </script>
+    
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+
+
+    <div class="copyright">
+      <div class="container text-center">
+          Designed by <a href="https://github.com/TheGrayish">@TheGrayish</a>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
