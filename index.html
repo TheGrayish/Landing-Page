@@ -39,20 +39,45 @@
 <style>
   /* Contenedor del círculo */
 
-    .circle-left {
-      width: 250px; /* Tamaño del círculo */
+  .circle-container {
+      perspective: 1000px; /* Permite la percepción de profundidad */
+      width: 750px; /* Aseguramos que sea igual de ancho y alto */
       height: 250px;
-      background-color: black; /* Fondo negro por defecto */
-      border: 10px solid #d4af37; /* Contorno amarillo neón */
-      border-radius: 50%; /* Hace el círculo redondo */
-      box-shadow: 0 0 30px #d4af37; /* Efecto neón */
-      flex-shrink: 0; /* Asegura que el círculo no se reduzca */
-      margin-right: 40px; /* Espacio entre el círculo y los textos */
-      margin-left: -50px; /* Mueve el círculo hacia la izquierda */
-      background-image: url('assets/img/111bf284-b096-40a5-a4e1-e854fc58afc9_1732155374660.png'); /* Imagen dentro del círculo */
+      position: relative;
+    }
+
+    .circle {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 1s ease-in-out;
+    }
+
+    .circle:hover {
+      transform: rotateY(180deg); /* Gira el círculo 180 grados en el eje Y al pasar el ratón */
+    }
+
+    .circle-face {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      border-radius: 50%; /* Hace el círculo perfectamente redondo */
       background-size: cover; /* Ajusta la imagen para cubrir el círculo */
       background-position: center; /* Centra la imagen en el círculo */
       background-repeat: no-repeat; /* Evita repeticiones */
+      border: 8px solid #d4af37; /* Contorno amarillo neón */
+      box-shadow: 0 0 30px #d4af37; /* Efecto neón */
+      backface-visibility: hidden; /* Oculta la cara trasera al girar */
+    }
+
+    .circle-front {
+      background-image: url('assets/img/111bf284-b096-40a5-a4e1-e854fc58afc9_1732155374660.png');
+    }
+
+    .circle-back {
+      background-image: url('assets/img/pickle.webp'); /* Imagen trasera */
+      transform: rotateY(180deg); /* Volteada para estar opuesta a la frontal */
     }
 
 
@@ -438,7 +463,7 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a href="index.html#Palanca">
+      <!-- <a href="index.html#Palanca">
     
         <button class="btn cube cube-hover">
           <div class="bg-top">
@@ -452,7 +477,7 @@
           </div>
           <div class="text">Easter-Egg</div>
         </button>
-      </a>
+      </a> -->
     </div>
   </header>
 
@@ -466,7 +491,12 @@
         <div class="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
           <div class="col-xl-6 col-lg-8 d-flex align-items-center">
             <!-- Círculo en el lado izquierdo -->
-            <div class="circle-left"></div>
+            <div class="circle-container">
+              <div class="circle">
+                <div class="circle-face circle-front"></div>
+                <div class="circle-face circle-back"></div>
+              </div>
+            </div>
     
             <!-- Textos en el lado derecho -->
             <div class="hero-text ms-4">
